@@ -6,7 +6,8 @@
     align-items: center;
 }
 
-.cell {
+.cell,
+.cell_bomb {
     display: flex;
     width: 30px;
     height: 30px;
@@ -17,4 +18,8 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+}
+
+.cell_bomb {
+    background-color: red;
 }
