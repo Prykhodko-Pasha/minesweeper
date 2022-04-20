@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import openCell from "../helpers/openCell";
 import fillNumbers from "../helpers/fillNumbers";
 import fillBombs from "../helpers/fillBombs";
+import putFlag from "../helpers/putFlag";
 
 export default function Field() {
   const cellsArr = Array(9)
@@ -16,32 +17,19 @@ export default function Field() {
 
   useEffect(() => {
     openCell(cellsArr);
+    putFlag();
   }, [cellsArr]);
 
   return (
     <div className="field_wrapper" id="field">
       {cellsArr.map((row, row_index) => {
-        return row.map((cell, col_index) => {
-          if (cell === "b") {
-            return (
-              <div
-                className="cell_bomb"
-                key={`${row_index}-${col_index}`}
-                id={`${row_index}-${col_index}`}
-              ></div>
-            );
-          } else {
-            return (
-              <div
-                className="cell"
-                key={`${row_index}-${col_index}`}
-                id={`${row_index}-${col_index}`}
-              >
-                {cell ? cell : ""}
-              </div>
-            );
-          }
-        });
+        return row.map((_, col_index) => (
+          <div
+            className="cell"
+            key={`${row_index}-${col_index}`}
+            id={`${row_index}-${col_index}`}
+          ></div>
+        ));
       })}
     </div>
   );
