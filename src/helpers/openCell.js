@@ -4,11 +4,11 @@ export default function openCell(cellsArr) {
     if (e.target.classList.contains("flag")) return;
     const [row, col] = e.target.id.split("-");
     if (cellsArr[row][col] === "b") {
-      console.log("bomb :>> ");
+      // console.log("bomb :>> ");
       onBombClick(cellsArr);
       field.classList.add("isClose");
     } else {
-      console.log("object :>> ");
+      // console.log("object :>> ");
       onCellClick(cellsArr, Number(row), Number(col));
     }
   });

@@ -12,7 +12,19 @@ code {
     monospace;
 }
 
-.field_wrapper {
+#logo {
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#logo:hover,
+#logo:focus {
+  transform: scale(1.1);
+  
+}
+
+.field_wrapper
+ {
   width: 300px;
   height: 100%;
   display: flex;
@@ -57,4 +69,9 @@ code {
   background-image: url(./images/flag.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: auto;
+}
+
+.win_img {
+  width: 100%;
 }

@@ -5,6 +5,6 @@ export default function putFlag() {
 
 function onPutFlag(e) {
   e.preventDefault();
-  console.log("flag :>> ");
+  // console.log("flag :>> ");
   e.target.classList.toggle("flag");
 }

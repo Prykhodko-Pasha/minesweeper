@@ -11,5 +11,6 @@ export default function startGame() {
   }
 
   fillNumbers(cellsArr);
+  // console.log("startGame :>> ", cellsArr);
   return cellsArr;
 }

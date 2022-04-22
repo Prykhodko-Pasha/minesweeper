@@ -1,30 +1,22 @@
-// import { useEffect } from "react";
-// import openCell from "../helpers/openCell";
-// import fillNumbers from "../helpers/fillNumbers";
-// import fillBombs from "../helpers/fillBombs";
-// import restartGame from "../helpers/restartGame";
-// import putFlag from "../helpers/putFlag";
+import { useEffect } from "react";
 
 export default function Field({ cellsArr }) {
-  console.log("START :>> ");
-  //   const cellsArr = Array(9)
-  //     .fill()
-  //     .map(() => Array(9).fill(0));
+  //   console.log("START :>> ");
+  function win() {
+    const flagsCount = document.querySelectorAll("flag").length;
+    console.log("flagsCount :>> ", flagsCount);
+    const openCellsCount = document.querySelectorAll("isOpen").length;
+    console.log("openCellsCount :>> ", openCellsCount);
+    if (flagsCount === 10 && openCellsCount === 9 * 9 - 10) alert("WIN");
+  }
 
-  //   for (let i = 0; i < 10; i++) {
-  //     fillBombs(cellsArr);
-  //   }
-
-  //   fillNumbers(cellsArr);
-
-  //   useEffect(() => {
-  //     // openCell(cellsArr);
-  //     putFlag();
-  //     // restartGame(cellsArr);
-  //   }, [cellsArr]);
+  useEffect(() => {
+    win();
+  }, []);
 
   return (
     <div className="field_wrapper" id="field">
+      {/* {console.log("cellsArr START :>> ", cellsArr)} */}
       {cellsArr.map((row, row_index) => {
         return row.map((_, col_index) => (
           <div
